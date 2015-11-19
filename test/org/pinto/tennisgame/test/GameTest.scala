@@ -9,7 +9,11 @@ import org.pinto.tennisgame.Game
 class GameTest extends FunSuite {
   
   test("dummy") {
- 
-    var sut = new Game()
+    val sut = new Game()
+  }
+  
+  test("Initial game score should be love love") {
+    val sut = new Game()
+    assertResult("love, love")(sut.score)
   }
 }
