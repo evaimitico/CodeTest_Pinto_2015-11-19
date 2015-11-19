@@ -16,7 +16,7 @@ class Game {
    def pointBall(player: Int) = {
      if(player == 1) 
         this.player1Score += 1
-     else
+     else if(player == 2)
         this.player2Score += 1
      Unit
    }
