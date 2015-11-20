@@ -70,4 +70,15 @@ class GameTest extends FunSuite with BeforeAndAfter {
     sut.pointBall(2)
     assertResult("deuce")(sut.score)
   }
+  
+  test("advantage when 1 point gap and  more than 3 point each"){
+    sut.pointBall(2)
+    sut.pointBall(2)
+    sut.pointBall(1)
+    sut.pointBall(1)
+    sut.pointBall(1)
+    sut.pointBall(2)
+    sut.pointBall(2)
+    assertResult("advantage player 2")(sut.score)
+  }
 }
