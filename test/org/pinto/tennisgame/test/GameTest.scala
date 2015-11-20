@@ -102,7 +102,7 @@ class GameTest extends FunSuite with BeforeAndAfter {
     assertResult("player 2 won")(sut.score)
   }
   
-  /* 
+   
   test("After game won, no more pointBall allowed"){
     sut.pointBall(2)
     sut.pointBall(2)
@@ -113,5 +113,5 @@ class GameTest extends FunSuite with BeforeAndAfter {
     }
     assert(thrown.getMessage === "Game Over")
     
-  }*/
+  }
 }
