@@ -102,4 +102,16 @@ class GameTest extends FunSuite with BeforeAndAfter {
     assertResult("player 2 won")(sut.score)
   }
   
+  /* 
+  test("After game won, no more pointBall allowed"){
+    sut.pointBall(2)
+    sut.pointBall(2)
+    sut.pointBall(2)
+    sut.pointBall(2)
+    val thrown = intercept[Exception] {
+      sut.pointBall(2)
+    }
+    assert(thrown.getMessage === "Game Over")
+    
+  }*/
 }
