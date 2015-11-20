@@ -93,4 +93,13 @@ class GameTest extends FunSuite with BeforeAndAfter {
     sut.pointBall(2)
     assertResult("player 2 won")(sut.score)
   }
+  
+   test("player can win with 4 pointball"){
+    sut.pointBall(2)
+    sut.pointBall(2)
+    sut.pointBall(2)
+    sut.pointBall(2)
+    assertResult("player 2 won")(sut.score)
+  }
+  
 }
