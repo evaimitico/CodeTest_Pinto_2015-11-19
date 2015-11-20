@@ -4,20 +4,19 @@ package org.pinto.tennisgame
 
 class Game {
    
-   var player1Score :Int = 0
-   var player2Score :Int = 0
+   var _scores = Array(0,0) 
    val scoreNames = Array("love","fifteen","thirty","forty")
    
    def score = {
-     this.scoreNames(this.player1Score) + " - " + 
-           this.scoreNames(this.player2Score)
+     this.scoreNames(this._scores(0)) + " - " + 
+           this.scoreNames(this._scores(1))
    }
    
    def pointBall(player: Int) = {
-     if(player == 1) 
-        this.player1Score += 1
-     else if(player == 2)
-        this.player2Score += 1
+     player match{
+       case 1|2 => this._scores(player-1) += 1
+       case _ => Unit
+     }
      Unit
    }
 }
