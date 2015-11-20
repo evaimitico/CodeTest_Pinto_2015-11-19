@@ -8,8 +8,11 @@ class Game {
    val scoreNames = Array("love","fifteen","thirty","forty")
    
    def score = {
-     this.scoreNames(this._scores(0)) + " - " + 
+     this._scores match{
+       case Array(3,3) => "deuce"
+       case _ => this.scoreNames(this._scores(0)) + " - " + 
            this.scoreNames(this._scores(1))
+     }
    }
    
    def pointBall(player: Int) = {
