@@ -16,6 +16,15 @@ class Game {
            scoreDescription(this._scores(1))
      }
    }
+    
+   def pointBall(player: Int) = {
+     player match{
+       case 1|2 if !wonGame => this._scores(player-1) += 1
+       case _ if wonGame => throw new Exception("Game Over")
+       case _ => Unit
+     }
+     Unit
+   }
    
    private def scoreDescription(x:Int) = this.scoreNames(x)
    
@@ -25,13 +34,5 @@ class Game {
      val (x,y) = (this._scores(0),this._scores(1))
      (x >= 4 || y >= 4) && (x-y).abs >= 2 
    }
-     
-   def pointBall(player: Int) = {
-     player match{
-       case 1|2 if !wonGame => this._scores(player-1) += 1
-       case _ if wonGame => throw new Exception("Game Over")
-       case _ => Unit
-     }
-     Unit
-   }
+   
 }
