@@ -9,7 +9,7 @@ class Game {
    
    def score = {
      this._scores match{
-       case Array(3,3) => "deuce"
+       case Array(x,y) if x >= 3 && y >= 3 && x==y => "deuce"
        case Array(x,y) if x >= 3 && y >= 3 && (x-y).abs == 1 => "advantage " + leaderPlayer
        case Array(x,y) if wonGame => leaderPlayer + " won"
        case _ => scoreDescription(this._scores(0)) + " - " + 
